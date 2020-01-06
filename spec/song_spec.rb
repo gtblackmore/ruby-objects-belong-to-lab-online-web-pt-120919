@@ -1,22 +1,23 @@
 require "spec_helper"
 
-describe "Song" do
-  let!(:song) { Song.new } 
+describe "Post" do
+  let!(:post) { Post.new } 
   it "has a title" do
-    song.title = "7/11" 
-    expect(song.title).to eq("7/11")
+    post.title = "Hello World" 
+    expect(post.title).to eq("Hello World")
   end
 
-  it "belongs to an artist" do 
-    artist = Artist.new
-    song.artist = artist
-    expect(song.artist).to eq(artist)
+  it "belongs to an author" do 
+    author = Author.new
+    post.author = author
+    expect(post.author).to eq(author)
   end
 
-  it "knows the name of the artist it belongs to" do 
-    artist = Artist.new
-    artist.name = "Beyonce"
-    song.artist = artist
-    expect(song.artist.name).to eq("Beyonce")
+  it "knows the name of the author it belongs to" do 
+    author = Author.new
+    author.name = "Uncle Bob"
+    post.author = author
+    expect(post.author.name).to eq("Uncle Bob")
   end
+end
 end
